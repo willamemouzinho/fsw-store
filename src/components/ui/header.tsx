@@ -51,7 +51,7 @@ const Header = () => {
                   </Avatar>
                   <div className="gap 2 flex flex-col">
                     <p className="font-semibold">{data.user.name}</p>
-                    <span className="text-sm font-bold text-primary">
+                    <span className="text-sm font-bold text-indigo-300">
                       Boas compras!
                     </span>
                   </div>
