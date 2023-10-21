@@ -1,5 +1,4 @@
 import {
-  CarTaxiFrontIcon,
   HomeIcon,
   ListOrderedIcon,
   LogInIcon,
