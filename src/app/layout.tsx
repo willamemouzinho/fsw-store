@@ -18,10 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <body className={inter.className + "h-screen"}>
         <AuthProvider>
-          <Header />
-          {children}
+          <div className="flex h-full flex-col">
+            <Header />
+            <div className="flex-1">{children}</div>
+            <footer>Footer</footer>
+          </div>
         </AuthProvider>
       </body>
     </html>

@@ -71,7 +71,7 @@ const Header = () => {
               </Button>
             ) : (
               <Button
-                className="w-full justify-start gap-2"
+                className="w-full justify-start gap-2 text-red-400"
                 variant="outline"
                 onClick={handleLogoutClick}
               >
