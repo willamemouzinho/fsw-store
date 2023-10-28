@@ -42,9 +42,6 @@ export default async function Home() {
 
       <div className="px-8">
         <SectionTitle>Ofertas</SectionTitle>
-      </div>
-
-      <div className="">
         <ProductList products={deals} />
       </div>
 
@@ -55,9 +52,6 @@ export default async function Home() {
 
       <div className="px-8">
         <SectionTitle>Teclados</SectionTitle>
-      </div>
-
-      <div className="">
         <ProductList products={keyboards} />
       </div>
 
@@ -66,11 +60,8 @@ export default async function Home() {
         alt="Atè 20% de desconto em fones"
       />
 
-      <div className="px-8">
+      <div className="mb-16 px-8">
         <SectionTitle>Mouses</SectionTitle>
-      </div>
-
-      <div className="">
         <ProductList products={mouses} />
       </div>
     </div>
