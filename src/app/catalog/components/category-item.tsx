@@ -20,7 +20,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
           }}
         />
       </div>
-      <p className="ro rounded-b-lg bg-accent py-3 text-center font-bold uppercase">
+      <p className="ro rounded-b-lg bg-accent py-3 text-center font-bold">
         {category.name}
       </p>
     </div>
