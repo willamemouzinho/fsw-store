@@ -3,6 +3,8 @@ import { Badge } from "./badge";
 import { SheetHeader } from "./sheet";
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart";
+import CartItem from "./cart-item";
+import { computeProductTotalPrice } from "@/helpers/product";
 
 const Cart = () => {
   const { products } = useContext(CartContext);
@@ -21,9 +23,14 @@ const Cart = () => {
         </div>
       </SheetHeader>
 
-      {products.map((product) => (
-        <h1 key={product.id}>{product.name}1</h1>
-      ))}
+      <div className="flex flex-col gap-5">
+        {products.map((product) => (
+          <CartItem
+            key={product.id}
+            product={computeProductTotalPrice(product as any) as any}
+          />
+        ))}
+      </div>
     </>
   );
 };
