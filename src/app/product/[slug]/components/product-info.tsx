@@ -78,7 +78,7 @@ const ProductInfo = ({
         Adicionar ao carrinho
       </Button>
 
-      <div className="mb-16 flex items-center justify-between rounded-lg bg-accent px-6 py-2 text-xs">
+      <div className="flex items-center justify-between rounded-lg bg-accent px-6 py-2 text-xs">
         <div className="flex items-center gap-3">
           <TruckIcon />
           <div className="flex flex-col gap-1">
