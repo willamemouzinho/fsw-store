@@ -125,9 +125,15 @@ const Header = () => {
         </h1>
       </Link>
 
-      <Button size="icon" variant="outline">
-        <ShoppingCart />
-      </Button>
+      <Sheet>
+        <SheetTrigger>
+          <Button size="icon" variant="outline">
+            <ShoppingCart />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent></SheetContent>
+      </Sheet>
     </Card>
   );
 };
