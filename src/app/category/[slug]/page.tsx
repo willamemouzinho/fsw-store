@@ -14,9 +14,7 @@ const CategoryPage = async ({ params }: any) => {
     },
   });
 
-  if (!category) {
-    return null;
-  }
+  if (!category) return null;
 
   return (
     <div className="p-8">

@@ -1,13 +1,12 @@
 import { ProductWithTotalPrice } from "@/helpers/product";
 import Image from "next/image";
-import { Badge } from "./badge";
-import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 import DiscountBadge from "./discount-badge";
 
 interface ProductItemProps {
   product: ProductWithTotalPrice;
 }
+
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <Link href={`/product/${product.slug}`}>
@@ -30,10 +29,12 @@ const ProductItem = ({ product }: ProductItemProps) => {
             </DiscountBadge>
           )}
         </div>
-        <div className="">
+
+        <div>
           <h2 className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
             {product.name}
           </h2>
+
           <h3 className="font-bold">
             R$ {Number(product.totalPrice).toFixed(2)}{" "}
             {product.discountPercentage > 0 && (

@@ -1,8 +1,9 @@
-import { CartContext, CartProduct } from "@/providers/cart";
-import Image from "next/image";
-import { Button } from "./button";
-import { ArrowLeft, ArrowRight, TrashIcon } from "lucide-react";
 import { useContext } from "react";
+import Image from "next/image";
+import { CartContext, CartProduct } from "@/providers/cart";
+import { Button } from "./button";
+
+import { ArrowLeft, ArrowRight, TrashIcon } from "lucide-react";
 
 interface CartItemProps {
   product: CartProduct;
@@ -52,6 +53,7 @@ const CartItem = ({ product }: CartItemProps) => {
             )}
           </h3>
         </div>
+
         <div className="flex items-center gap-2">
           <Button
             size="icon"

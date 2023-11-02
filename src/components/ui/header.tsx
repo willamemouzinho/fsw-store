@@ -1,15 +1,7 @@
 "use client";
 
-import {
-  HomeIcon,
-  ListOrderedIcon,
-  LogInIcon,
-  LogOutIcon,
-  MenuIcon,
-  PercentIcon,
-  ShoppingCart,
-} from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 import { Button } from "./button";
 import { Card } from "./card";
 import {
@@ -21,8 +13,17 @@ import {
 } from "./sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
-import Link from "next/link";
 import Cart from "./cart";
+
+import {
+  HomeIcon,
+  ListOrderedIcon,
+  LogInIcon,
+  LogOutIcon,
+  MenuIcon,
+  PercentIcon,
+  ShoppingCart,
+} from "lucide-react";
 
 const Header = () => {
   const { status, data } = useSession();
@@ -57,13 +58,15 @@ const Header = () => {
                     </AvatarFallback>
                     {data.user.image && <AvatarImage src={data.user.image} />}
                   </Avatar>
+
                   <div className="gap 2 flex flex-col">
                     <p className="font-semibold">{data.user.name}</p>
-                    <span className="text-sm font-bold text-[#8162FF]">
+                    <span className="text-primary-text text-sm font-bold">
                       Boas compras!
                     </span>
                   </div>
                 </div>
+
                 <Separator />
               </div>
             )}
@@ -122,7 +125,7 @@ const Header = () => {
 
       <Link href="/">
         <h1 className="text-lg font-semibold">
-          <span className="text-[#8162FF]">Full Stack Week</span> Store
+          <span className="text-primary-text">Full Stack Week</span> Store
         </h1>
       </Link>
 

@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { Category } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
 import { CATEGORY_ICON } from "@/constants/category-icon";
-import Link from "next/link";
 
 interface CategoryItemProps {
   category: Category;

@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
-import { ShapesIcon } from "lucide-react";
 import CategoryList from "./components/category-list";
+
+import { ShapesIcon } from "lucide-react";
 
 const CatologPage = () => {
   return (

@@ -1,8 +1,8 @@
 "use client";
 
-import { ProductWithTotalPrice } from "@/helpers/product";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+import { ProductWithTotalPrice } from "@/helpers/product";
 
 interface ProductImagesProps {
   product: Pick<ProductWithTotalPrice, "name" | "imageUrls">;

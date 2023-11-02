@@ -1,11 +1,12 @@
 "use client";
 
+import { useContext, useState } from "react";
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discount-badge";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { CartContext } from "@/providers/cart";
+
 import { ArrowLeft, ArrowRight, TruckIcon } from "lucide-react";
-import { useContext, useState } from "react";
 
 interface ProductInfoProps {
   product: ProductWithTotalPrice;
@@ -31,6 +32,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
   return (
     <div>
       <h1 className="mb-4 text-lg">{product.name}</h1>
+
       <div className="mb-4 flex flex-col">
         <div className="flex gap-2">
           <h2 className="text-2xl font-bold">
@@ -88,7 +90,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             <p>
               Entrega via <span className="font-bold italic">FSPacket®</span>
             </p>
-            <p className="text-[#8162FF]">
+            <p className="text-primary-text">
               Envio para <span className="font-bold">todo Brasil</span>
             </p>
           </div>

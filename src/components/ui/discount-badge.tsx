@@ -1,6 +1,7 @@
-import { ArrowDown } from "lucide-react";
 import { Badge, BadgeProps } from "./badge";
+
 import { twMerge } from "tailwind-merge";
+import { ArrowDown } from "lucide-react";
 
 const DiscountBadge = ({ children, className, ...props }: BadgeProps) => {
   return (

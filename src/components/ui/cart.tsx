@@ -1,10 +1,11 @@
-import { ShoppingCartIcon } from "lucide-react";
-import { Badge } from "./badge";
-import { SheetHeader } from "./sheet";
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart";
-import CartItem from "./cart-item";
 import { computeProductTotalPrice } from "@/helpers/product";
+import { Badge } from "./badge";
+import { SheetHeader } from "./sheet";
+import CartItem from "./cart-item";
+
+import { ShoppingCartIcon } from "lucide-react";
 
 const Cart = () => {
   const { products } = useContext(CartContext);

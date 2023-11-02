@@ -1,7 +1,7 @@
 "use client";
 
-import { ProductWithTotalPrice } from "@/helpers/product";
 import { ReactNode, createContext, useState } from "react";
+import { ProductWithTotalPrice } from "@/helpers/product";
 
 export interface CartProduct extends ProductWithTotalPrice {
   quantity: number;
