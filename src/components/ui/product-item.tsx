@@ -33,17 +33,17 @@ const ProductItem = ({ product }: ProductItemProps) => {
           )}
         </div>
         <div className="">
-          <h3 className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
+          <h2 className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
             {product.name}
-          </h3>
-          <p className="font-bold">
+          </h2>
+          <h3 className="font-bold">
             R$ {Number(product.totalPrice).toFixed(2)}{" "}
             {product.discountPercentage > 0 && (
               <span className="text-xs line-through opacity-50">
                 R$ {Number(product.basePrice).toFixed(2)}
               </span>
             )}
-          </p>
+          </h3>
         </div>
       </div>
     </Link>

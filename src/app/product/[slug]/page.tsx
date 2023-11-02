@@ -1,4 +1,7 @@
 import { prismaClient } from "@/lib/prisma";
+import ProductImages from "./components/product-images";
+import ProductInfo from "./components/product-info";
+import { computeProductTotalPrice } from "@/helpers/product";
 
 interface ProductDetailsPageProps {
   params: { slug: string };
@@ -7,15 +10,25 @@ interface ProductDetailsPageProps {
 const ProductDetailsPage = async ({
   params: { slug },
 }: ProductDetailsPageProps) => {
-  const products = await prismaClient.product.findFirst({
+  const product = await prismaClient.product.findFirst({
     where: {
       slug: slug,
     },
   });
 
-  if (!products) return null;
+  if (!product) return null;
 
-  return <div>{products.name}</div>;
+  return (
+    <div>
+      <div className="mb-8">
+        <ProductImages product={product} />
+      </div>
+
+      <div className="px-8">
+        <ProductInfo product={computeProductTotalPrice(product)} />
+      </div>
+    </div>
+  );
 };
 
 export default ProductDetailsPage;
