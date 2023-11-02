@@ -40,9 +40,13 @@ export default async function Home() {
         <Categories />
       </div>
 
-      <div className="px-8">
-        <SectionTitle>Ofertas</SectionTitle>
-        <ProductList products={deals} />
+      <div>
+        <div className="px-8">
+          <SectionTitle>Ofertas</SectionTitle>
+        </div>
+        <div className="ps-8">
+          <ProductList products={deals} />
+        </div>
       </div>
 
       <PromoBanner
@@ -50,9 +54,13 @@ export default async function Home() {
         alt="Atè 55% de desconto em mouses"
       />
 
-      <div className="px-8">
-        <SectionTitle>Teclados</SectionTitle>
-        <ProductList products={keyboards} />
+      <div>
+        <div className="px-8">
+          <SectionTitle>Teclados</SectionTitle>
+        </div>
+        <div className="ps-8">
+          <ProductList products={keyboards} />
+        </div>
       </div>
 
       <PromoBanner
@@ -60,9 +68,13 @@ export default async function Home() {
         alt="Atè 20% de desconto em fones"
       />
 
-      <div className="mb-16 px-8">
-        <SectionTitle>Mouses</SectionTitle>
-        <ProductList products={mouses} />
+      <div className="mb-16">
+        <div className="px-8">
+          <SectionTitle>Mouses</SectionTitle>
+        </div>
+        <div className="ps-8">
+          <ProductList products={mouses} />
+        </div>
       </div>
     </div>
   );
