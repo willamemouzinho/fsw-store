@@ -90,7 +90,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             <p>
               Entrega via <span className="font-bold italic">FSPacket®</span>
             </p>
-            <p className="text-primary-text">
+            <p className="text-primary">
               Envio para <span className="font-bold">todo Brasil</span>
             </p>
           </div>

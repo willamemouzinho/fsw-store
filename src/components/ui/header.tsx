@@ -61,7 +61,7 @@ const Header = () => {
 
                   <div className="gap 2 flex flex-col">
                     <p className="font-semibold">{data.user.name}</p>
-                    <span className="text-primary-text text-sm font-bold">
+                    <span className="text-sm font-bold text-primary">
                       Boas compras!
                     </span>
                   </div>
@@ -125,7 +125,7 @@ const Header = () => {
 
       <Link href="/">
         <h1 className="text-lg font-semibold">
-          <span className="text-primary-text">Full Stack Week</span> Store
+          <span className="text-primary">Full Stack Week</span> Store
         </h1>
       </Link>
 
