@@ -6,9 +6,10 @@ import { SheetHeader } from "./sheet";
 import CartItem from "./cart-item";
 
 import { ShoppingCartIcon } from "lucide-react";
+import { Separator } from "./separator";
 
 const Cart = () => {
-  const { products } = useContext(CartContext);
+  const { products, subtotal, total, totalDiscount } = useContext(CartContext);
 
   return (
     <>
@@ -25,12 +26,46 @@ const Cart = () => {
       </SheetHeader>
 
       <div className="flex flex-col gap-5">
-        {products.map((product) => (
-          <CartItem
-            key={product.id}
-            product={computeProductTotalPrice(product as any) as any}
-          />
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <CartItem
+              key={product.id}
+              product={computeProductTotalPrice(product as any) as any}
+            />
+          ))
+        ) : (
+          <p className="text-sm">
+            Carrinho vazio.{" "}
+            <span className="font-bold text-primary-text">
+              Comece suas compras!
+            </span>
+          </p>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-3 text-xs">
+        <Separator />
+        <div className="flex items-center justify-between">
+          <p>Subtotal</p>
+          <p>{subtotal.toFixed(2)}</p>
+        </div>
+
+        <Separator />
+        <div className="flex items-center justify-between">
+          <p>Entrega</p>
+          <p className="uppercase">Grátis</p>
+        </div>
+        <Separator />
+        <div className="flex items-center justify-between">
+          <p>Descontos</p>
+          <p>{totalDiscount.toFixed(2)}</p>
+        </div>
+
+        <Separator />
+        <div className="flex items-center justify-between text-sm font-bold">
+          <p>Total</p>
+          <p>{total.toFixed(2)}</p>
+        </div>
       </div>
     </>
   );
