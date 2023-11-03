@@ -47,33 +47,35 @@ const Cart = () => {
         </div>
       </ScrollArea>
 
-      <div className="flex flex-col gap-3 text-xs">
-        <Separator />
-        <div className="flex items-center justify-between">
-          <p>Subtotal</p>
-          <p>R$ {subtotal.toFixed(2)}</p>
-        </div>
+      {products.length > 0 && (
+        <div className="flex flex-col gap-3 text-xs">
+          <Separator />
+          <div className="flex items-center justify-between">
+            <p>Subtotal</p>
+            <p>R$ {subtotal.toFixed(2)}</p>
+          </div>
 
-        <Separator />
-        <div className="flex items-center justify-between">
-          <p>Entrega</p>
-          <p className="uppercase">Grátis</p>
-        </div>
+          <Separator />
+          <div className="flex items-center justify-between">
+            <p>Entrega</p>
+            <p className="uppercase">Grátis</p>
+          </div>
 
-        <Separator />
-        <div className="flex items-center justify-between">
-          <p>Descontos</p>
-          <p>- R$ {totalDiscount.toFixed(2)}</p>
-        </div>
+          <Separator />
+          <div className="flex items-center justify-between">
+            <p>Descontos</p>
+            <p>- R$ {totalDiscount.toFixed(2)}</p>
+          </div>
 
-        <Separator />
-        <div className="flex items-center justify-between text-sm font-bold">
-          <p>Total</p>
-          <p>R$ {total.toFixed(2)}</p>
-        </div>
+          <Separator />
+          <div className="flex items-center justify-between text-sm font-bold">
+            <p>Total</p>
+            <p>R$ {total.toFixed(2)}</p>
+          </div>
 
-        <Button className="mt-7 font-bold uppercase">Finalizar compra</Button>
-      </div>
+          <Button className="mt-7 font-bold uppercase">Finalizar compra</Button>
+        </div>
+      )}
     </div>
   );
 };
