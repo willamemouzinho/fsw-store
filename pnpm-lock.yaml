@@ -60,7 +60,7 @@ dependencies:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
   stripe:
-    specifier: ^14.1.0
+    specifier: ^14.2.0
     version: 14.2.0
   tailwind-merge:
     specifier: ^1.14.0
