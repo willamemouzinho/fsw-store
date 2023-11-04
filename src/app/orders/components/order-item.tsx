@@ -86,7 +86,7 @@ const OrderItem = ({ order }: OrderItemProps) => {
           <AccordionContent>
             <div className="flex flex-col gap-8">
               <div className="flex items-center justify-between lg:hidden">
-                <div className="font-bold">
+                <div className="">
                   <p className="mb-1 text-xs uppercase lg:text-sm">Status</p>
                   <p className="text-xs text-primary lg:text-sm">
                     {getOrderStatus(order.status)}

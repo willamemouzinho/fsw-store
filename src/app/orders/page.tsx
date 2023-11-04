@@ -34,7 +34,7 @@ async function OrderPage() {
   });
 
   return (
-    <div className="p-5 lg:container lg:mx-auto lg:py-10">
+    <div className="px-8 pt-8 lg:container lg:mx-auto lg:py-10">
       <div className="mb-8">
         <Badge
           variant="outline"
