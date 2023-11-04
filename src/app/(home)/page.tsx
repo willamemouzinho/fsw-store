@@ -30,7 +30,7 @@ export default async function Home() {
   });
 
   return (
-    <div className="">
+    <div>
       <PromoBanner
         src="/banner-home-01.png"
         alt="Atè 55% de desconto só esse mês"
@@ -68,7 +68,7 @@ export default async function Home() {
         alt="Atè 20% de desconto em fones"
       />
 
-      <div className="mb-16">
+      <div>
         <div className="px-8">
           <SectionTitle>Mouses</SectionTitle>
         </div>

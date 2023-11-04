@@ -5,7 +5,7 @@ import { ShapesIcon } from "lucide-react";
 
 const CatologPage = () => {
   return (
-    <div className="p-8">
+    <div className="px-8 pt-8">
       <div className="mb-8">
         <Badge
           variant="outline"

@@ -27,7 +27,7 @@ const CategoryPage = async ({ params }: any) => {
           {category.name}
         </Badge>
       </div>
-      <div className="mb-16 grid grid-cols-2 gap-4">
+      <div className=" grid grid-cols-2 gap-4">
         {category.products.map((product) => (
           <ProductItem
             key={product.id}

@@ -43,7 +43,7 @@ const ProductDetailsPage = async ({
         <ProductInfo product={computeProductTotalPrice(product)} />
       </div>
 
-      <div className="mb-16">
+      <div>
         <div className="px-8">
           <SectionTitle>Relacionados</SectionTitle>
         </div>
