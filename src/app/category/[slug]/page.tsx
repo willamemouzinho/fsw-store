@@ -17,7 +17,7 @@ const CategoryPage = async ({ params }: any) => {
   if (!category) return null;
 
   return (
-    <div className="p-8">
+    <div className="px-8 pt-8">
       <div className="mb-8">
         <Badge
           variant="outline"
@@ -27,8 +27,7 @@ const CategoryPage = async ({ params }: any) => {
           {category.name}
         </Badge>
       </div>
-
-      <div className="grid grid-cols-2 gap-4">
+      <div className="mb-16 grid grid-cols-2 gap-4">
         {category.products.map((product) => (
           <ProductItem
             key={product.id}
