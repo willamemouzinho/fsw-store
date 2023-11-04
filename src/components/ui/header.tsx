@@ -16,6 +16,7 @@ import { Separator } from "./separator";
 import Cart from "./cart";
 
 import {
+  BadgeIcon,
   HomeIcon,
   ListOrderedIcon,
   LogInIcon,
@@ -25,9 +26,14 @@ import {
   PercentIcon,
   ShoppingCart,
 } from "lucide-react";
+import { Badge } from "./badge";
+import { useContext } from "react";
+import { CartContext } from "@/providers/cart";
 
 const Header = () => {
   const { status, data } = useSession();
+
+  const { products } = useContext(CartContext);
 
   const handleLoginClick = async () => {
     await signIn();
@@ -153,8 +159,15 @@ const Header = () => {
 
       <Sheet>
         <SheetTrigger asChild>
-          <Button size="icon" variant="outline">
+          <Button size="icon" variant="outline" className="relative">
             <ShoppingCart />
+            {products.length > 0 && (
+              <div
+                className={
+                  "absolute bottom-2 right-1 h-2.5 w-2.5 rounded-full bg-primary"
+                }
+              ></div>
+            )}
           </Button>
         </SheetTrigger>
 
