@@ -1,22 +1,33 @@
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart";
 import { computeProductTotalPrice } from "@/helpers/product";
+import { createCheckout } from "@/actions/checkout";
+import { createOrder } from "@/actions/order";
 import { Badge } from "./badge";
 import { SheetHeader } from "./sheet";
 import CartItem from "./cart-item";
-
-import { ShoppingCartIcon } from "lucide-react";
-import { loadStripe } from "@stripe/stripe-js";
 import { Separator } from "./separator";
 import { ScrollArea } from "./scroll-area";
 import { Button } from "./button";
-import { createCheckout } from "@/actions/checkout";
+
+import { ShoppingCartIcon } from "lucide-react";
+import { useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Cart = () => {
+  const { data } = useSession();
+
   const { products, subtotal, total, totalDiscount } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
-    const checkout = await createCheckout(products);
+    if (!data?.user) {
+      // Redirecionar para o login
+      return;
+    }
+
+    const order = await createOrder(products, (data?.user as any).id);
+
+    const checkout = await createCheckout(products, order.id);
 
     console.log(checkout);
 
