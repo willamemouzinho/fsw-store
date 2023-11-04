@@ -29,10 +29,7 @@ export const POST = async (request: Request) => {
     );
 
     // Acionar o prisma (criar Order Model)
-    const lineItems = sessionWithLineItems.line_items;
-
-    console.log(lineItems);
-    console.log("OIiiiiiiiiiiiiiiiiiiii");
+    // const lineItems = sessionWithLineItems.line_items;
   }
 
   return NextResponse.json({ received: true });
