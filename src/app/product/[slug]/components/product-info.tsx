@@ -33,7 +33,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
     <div>
       <h1 className="mb-4 text-lg">{product.name}</h1>
 
-      <div className="mb-4 flex flex-col">
+      <div className="mb-4 flex flex-col items-start">
         <div className="flex gap-2">
           <h2 className="text-2xl font-bold">
             R$ {Number(product.totalPrice).toFixed(2)}

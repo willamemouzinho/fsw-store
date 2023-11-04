@@ -1,0 +1,57 @@
+import { Badge } from "@/components/ui/badge";
+import { authOptions } from "@/lib/auth";
+import { prismaClient } from "@/lib/prisma";
+import OrderItem from "./components/order-item";
+
+import { getServerSession } from "next-auth";
+import { PackageSearchIcon } from "lucide-react";
+
+export const dynamic = "force-dynamic";
+
+async function OrderPage() {
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session.user) {
+    return (
+      <div className="flex h-full flex-col items-center justify-center gap-2 p-5">
+        <h2 className="font-bold">Acesso Negado!</h2>
+        <p className="text-sm opacity-60">Faça login para ver seus pedidos</p>
+      </div>
+    );
+  }
+
+  const orders = await prismaClient.order.findMany({
+    where: {
+      userId: session.user.id,
+    },
+    include: {
+      orderProducts: {
+        include: {
+          product: true,
+        },
+      },
+    },
+  });
+
+  return (
+    <div className="p-5 lg:container lg:mx-auto lg:py-10">
+      <div className="mb-8">
+        <Badge
+          variant="outline"
+          className="gap-1 rounded-full border-2 border-primary px-3 py-1 text-base font-bold uppercase"
+        >
+          <PackageSearchIcon size={16} />
+          Meus Pedidos
+        </Badge>
+      </div>
+
+      <div className="mt-5 flex flex-col gap-5">
+        {orders.map((order) => (
+          <OrderItem key={order.id} order={order} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default OrderPage;
