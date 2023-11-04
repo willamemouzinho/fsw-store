@@ -11,9 +11,8 @@ import { ScrollArea } from "./scroll-area";
 import { Button } from "./button";
 
 import { ShoppingCartIcon } from "lucide-react";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { loadStripe } from "@stripe/stripe-js";
-import { NextResponse } from "next/server";
 
 const Cart = () => {
   const { data } = useSession();
@@ -22,10 +21,8 @@ const Cart = () => {
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
-      // Redirecionar para o login
-      // return;
-      console.log("Oiiiiiiiiiiiiiiiii");
-      return NextResponse.error();
+      await signIn();
+      return;
     }
 
     const order = await createOrder(products, (data?.user as any).id);
